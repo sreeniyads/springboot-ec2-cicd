@@ -41,7 +41,7 @@ jobs:
           username: ubuntu
           key: ${{ secrets.EC2_KEY }}
           script: |
-            docker pull ${{ secrets.DOCKER_USERNAME }}/springboot-ec2
+            docker pull sreeniyad/springboot-ec2
             docker stop springboot-app || true
             docker rm springboot-app || true
-            docker run -d -p 80:8080 --name springboot-app ${{ secrets.DOCKER_USERNAME }}/springboot-ec2
+            docker run -d -p 80:8080 --name springboot-app sreeniyad/springboot-ec2
